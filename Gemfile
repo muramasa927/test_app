@@ -59,3 +59,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # deviseの導入
 gem 'devise'
+
+# net-smtpの追加
+gem 'net-smtp'
