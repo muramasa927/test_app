@@ -16,6 +16,6 @@ Rails.application.routes.draw do
 
   #開発環境のみletter_openerのURLを追加
   if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+    mount LetterOpenerWeb::Engine, at: '/letter_opener'
   end
 end
