@@ -62,3 +62,5 @@ gem 'devise'
 
 # net-smtpの追加
 gem 'net-smtp'
+# bootstrapの追加
+gem 'bootstrap', '~> 5.1.3'
