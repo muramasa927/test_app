@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # resource :user, only: [:show]
+
+  # rootをログイン画面に設定
+  devise_scope :user do
+    root "users/sessions#new"
+  end
+  resource :users do
+    collection do
+      get 'dash_boards'
+    end
+  end
+
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions',
