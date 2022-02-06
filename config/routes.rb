@@ -5,11 +5,8 @@ Rails.application.routes.draw do
   # rootをログイン画面に設定
   devise_scope :user do
     root "users/sessions#new"
-  end
-  resource :users do
-    collection do
-      get 'dash_boards'
-    end
+    get '/users/sign_out' => 'devise/sessions#destroy'
+    
   end
 
   devise_for :users, :controllers => {
@@ -18,6 +15,12 @@ Rails.application.routes.draw do
     :confirmations => 'users/confirmations',
     :passwords => 'users/passwords'
   } 
+
+  resource :users do
+    collection do
+      get 'dash_boards'
+    end
+  end
 
   #開発環境のみletter_openerのURLを追加
   if Rails.env.development?
