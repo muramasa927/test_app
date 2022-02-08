@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3">
-      <h2 class="text-center">Edit <%= resource_name.to_s.humanize %></h2>
+      <%# 変わってない %>
+      <h2 class="text-center"><%= t('.edit') %><%= resource_name.to_s.humanize %></h2>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= render "users/shared/error_messages", resource: resource %>
@@ -40,8 +41,8 @@
         </div>
 
         <div class="actions actions text-center m-4">
-          <%= f.submit "Update", class:"btn btn-primary" %>
-        </div>
+          <%= f.submit t('.update'), class:"btn btn-primary" %>
+        </div>''
       <% end %>
 
       <h3 class="text-center">Cancel my account</h3>
