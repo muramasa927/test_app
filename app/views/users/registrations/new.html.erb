@@ -19,7 +19,7 @@
         <div class="field">
           <%= f.label :password, class:"offset-md-2" %>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(<%= @minimum_password_length %> <%= t('.characters_minimum') %>)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password", class:"col-md-8 offset-md-2" %>
         </div>
