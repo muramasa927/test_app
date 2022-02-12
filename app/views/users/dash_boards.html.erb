@@ -2,6 +2,7 @@
 <h4 class="text-center"><%= current_user.name %></h4>
 <div class= "container">
 	<div class="row col-md-6 offset-md-3">
+		<%= link_to "記事作成", new_users_articles_path %>
 		<%= link_to "編集", edit_user_registration_path, class: "btn btn-primary col-md-6 offset-md-3" %>
 		<%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-warning col-md-6 offset-md-3" %>
 	</div>

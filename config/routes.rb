@@ -16,12 +16,11 @@ Rails.application.routes.draw do
     :passwords => 'users/passwords'
   } 
 
-  resource :users do
-    collection do
-      get 'dash_boards'
-    end
+  namespace :users do
+    get 'dash_boards'
+    resource :articles
   end
-
+  
   #開発環境のみletter_openerのURLを追加
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: '/letter_opener'
