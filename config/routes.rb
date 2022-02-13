@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   namespace :users do
     get 'dash_boards'
-    resource :articles
+    resources :articles
   end
   
   #開発環境のみletter_openerのURLを追加
