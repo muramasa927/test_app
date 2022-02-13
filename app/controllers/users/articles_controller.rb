@@ -10,6 +10,11 @@ class Users::ArticlesController < ApplicationController
 		@article = Article.new
 	end
 
+	def create
+		
+		redirect_to users_articles_path
+	end
+
 private
 	def article_params
 		params.require(:post).permit(:title, :content, :image)
