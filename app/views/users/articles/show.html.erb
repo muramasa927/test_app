@@ -1,0 +1,37 @@
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-10 offset-md-1'>
+			<h2 class="text-center">記事詳細</h2>
+			<table class='table'>
+				<thead>
+					<tr class='text-center'>
+						<th>タイトル</th>
+						<th>内容</th>
+						<th>画像</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class='text-center'>
+						<td><%= @article.title %></td>
+						<td><%= @article.content %></td>
+						<td>
+						<% if @article.image? %>  <!-- アップロード画像がある場合に実行する -->
+								<%= image_tag @article.image.url %><!-- userインスタンスの画像ファイルのURLを取得し表示 -->
+						<% end %>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-md-6 offset-md-3 text-center'>
+			<%= link_to "編集", edit_users_article_url(@article), class:'btn btn-success' %>
+			<%= link_to "削除", [:users, @article], method: :delete,
+																						data: { confirm: "You sure?" }, class: 'btn btn-danger' %>
+		</div>
+	</div>
+	<div class="text-center">
+		<%= link_to "記事一覧へ戻る", users_articles_path, class: "btn btn-primary m-4" %>
+	</div>
+</div>

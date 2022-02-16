@@ -1,35 +1,41 @@
 <div class='container'>
 	<div class='row'>
-		<div class='col-md-6 offset-md-3'>
+		<div class='col-md-10 offset-md-1'>
 			<h2 class="text-center">記事一覧</h2>
 			<%= link_to "記事新規作成", new_users_article_path, class:"btn btn-primary col-md-6 offset-md-3" %>
-			<% @articles.each do |article| %>
-				<table class='table'>
-					<thead>
+			<table class='table'>
+				<thead>
+					<tr class='text-center'>
+						<th>詳細表示</th>
+						<th>タイトル</th>
+						<th>内容</th>
+						<th>画像</th>
+						<th>編集・削除</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @articles.each do |article| %>
 						<tr class='text-center'>
-							<th>タイトル</th>
-							<th>内容</th>
-							<th>画像</th>
-							<th>編集・削除</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class='text-center'>
+							<td><%= link_to "詳細", users_article_url(article), class: 'btn btn-primary' %></td>
 							<td><%= article.title %></td>
 							<td><%= article.content %></td>
 							<td>
-							<% if article.image? %>  <!-- アップロード画像がある場合に実行する -->
+								<% if article.image? %>  <!-- アップロード画像がある場合に実行する -->
 									<%= image_tag article.image.url %><!-- userインスタンスの画像ファイルのURLを取得し表示 -->
-							<% end %>
+								<% end %>
 							</td>
 							<td>
 								<%= link_to "編集", edit_users_article_url(article), class:'btn btn-success' %>
 								<%= link_to "削除", [:users, article], method: :delete,
-																													data: { confirm: "You sure?" }, class: 'btn btn-danger' %>
+																												data: { confirm: "You sure?" }, class: 'btn btn-danger' %>
 							</td>
 						</tr>
-					</tbody>
-				</table>
-			<% end%>
+					<% end%>
+				</tbody>
+			</table>
+		<div class='text-center'>
+			<%= link_to "ダッシュボードへ戻る", users_dash_boards_url, class:'btn btn-success' %>
+		</div>
 	</div>
 </div>
+

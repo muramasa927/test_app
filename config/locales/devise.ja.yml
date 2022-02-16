@@ -1,6 +1,10 @@
 ja:
   activerecord:
     attributes:
+      article:
+        title: タイトル
+        content: 内容
+        image: 画像
       user:
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン

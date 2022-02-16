@@ -12,11 +12,14 @@
 
 	<div class="field">
 		<%= f.label :image, class:"offset-md-2" %>
-		<%= f.file_field :image, class:"col-md-8 offset-md-2" %>
+		<%= f.file_field :image, class:"col-md-8 offset-md-2"  %>
 	</div>
 
-
 	<div class="actions text-center m-4">
-		<%= f.submit '新規作成', class: "btn btn-primary" %>
+		<%= f.submit btn_text, class: "btn btn-primary" %>
+	</div>
+
+	<div class="offset-md-2">
+		<%= link_to "戻る", :back %>
 	</div>
 <% end %>
