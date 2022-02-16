@@ -65,3 +65,6 @@ gem 'net-smtp'
 # bootstrapの追加
 gem 'bootstrap', '~> 5.1.3'
 gem 'popper_js', '~> 2.9.3'
+
+# carriewaveの追加
+gem 'carrierwave', '~> 2.0'
